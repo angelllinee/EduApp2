@@ -12,13 +12,12 @@
     
     <div class="materials-list">
         <h3>Daftar Materi</h3>
-        {% if course.materials %}
+        {% if materials %}
             <ul>
-                {% for material in course.materials %}
+                {% for material in materials %}
                 <li>
                     <span>{{ material.title }}</span>
-                    <a href="{{ url_for('view_material', course_id=course.id, filename=material.file) }}" 
-                       class="btn btn-view" target="_blank">
+                    <a href="{{ material.material_url }}" class="btn btn-view" target="_blank">
                         Lihat Materi
                     </a>
                 </li>
