@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Kursus{% endblock %}
+
+{% block content %}
+<h2>Daftar Kursus Kami</h2>
+<div class="course-list">
+    {% for course in courses %}
+    <div class="course-card">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <span class="duration">{{ course.duration }}</span>
+        <a href="{{ url_for('enroll', course_id=course.id) }}" class="btn">Daftar Sekarang</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

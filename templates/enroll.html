@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Enroll ke {{ course.title }}{% endblock %}
+
+{% block content %}
+<div class="enroll-form">
+    <h2>Enroll ke {{ course.title }}</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="enroll_key">Masukkan Enroll Key:</label>
+            <input type="password" id="enroll_key" name="enroll_key" required>
+            <small>Dapatkan enroll key dari admin atau instruktur</small>
+        </div>
+        <button type="submit" class="btn">Enroll Sekarang</button>
+        <a href="{{ url_for('show_courses') }}" class="btn btn-secondary">Kembali</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Beranda{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Belajar Lebih Mudah dengan Edukasi</h2>
+    <p>Temukan kursus terbaik untuk meningkatkan pengetahuan dan keterampilan Anda.</p>
+    <a href="{{ url_for('show_courses') }}" class="btn">Lihat Kursus</a>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h3>Akses Fleksibel</h3>
+        <p>Belajar kapan saja, di mana saja sesuai jadwal Anda.</p>
+    </div>
+    <div class="feature">
+        <h3>Instruktur Berpengalaman</h3>
+        <p>Diajar oleh para ahli di bidangnya masing-masing.</p>
+    </div>
+    <div class="feature">
+        <h3>Materi Terupdate</h3>
+        <p>Konten pembelajaran selalu diperbarui sesuai perkembangan.</p>
+    </div>
+</section>
+{% endblock %}
